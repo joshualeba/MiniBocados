@@ -1,0 +1,814 @@
+/* --- Configuración de la marca MiniBocados --- */
+:root {
+    --brand-primary: #F57C00; /* Naranja del logo */
+    --brand-secondary: #fce9d3; /* Color principal (beige/durazno) */
+    --brand-background: #fefcf9; /* Fondo muy claro */
+    --soft-pink: #fff0f5;
+    --soft-blue: #f0f8ff;
+    --soft-green: #e8f5e9; /* Un verde más claro para backgrounds */
+    --text-color: #444;
+    --headline-color: #333;
+    --green-check: #2e7d32;
+    --red-cross: #d32f2f;
+    --light-gray-bg: #f9f9f9; /* Para secciones alternas */
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--brand-background);
+    color: var(--text-color);
+    line-height: 1.7;
+    background-image: url('bg.png'); /* Asegúrate de que la ruta sea correcta */
+    background-repeat: repeat;
+    background-size: 800px; /* Un tamaño muy grande para que el patrón sea sutil */
+    opacity: 0.85; /* Lo hacemos semitransparente para que no compita con el contenido */
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: var(--headline-color);
+}
+
+/* --- Global Container Padding --- */
+.container-section {
+    padding: 40px 15px;
+}
+@media (min-width: 992px) {
+    .container-section {
+        padding: 60px 15px;
+    }
+}
+
+/* --- Botón de Compra (CTA) --- */
+.btn-cta {
+    background: linear-gradient(135deg, var(--brand-primary), #f79a3b);
+    color: #ffffff;
+    font-weight: 800;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(245, 124, 0, 0.4);
+    display: block;
+    width: 100%;
+    max-width: 400px; /* Para controlar el ancho en desktop */
+    margin: 30px auto; /* Centrarlo */
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-cta:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(245, 124, 0, 0.5);
+}
+
+.btn-cta .price-tag {
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.9;
+    display: block; /* Para que el precio-tag esté en una nueva línea */
+}
+
+/* --- Card Generales --- */
+.custom-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    border: 1px solid #f0f0f0;
+    height: 100%;
+}
+
+.bg-soft-peach { background-color: var(--brand-secondary); }
+.bg-soft-pink { background-color: var(--soft-pink); }
+.bg-soft-blue { background-color: var(--soft-blue); }
+.bg-soft-green { background-color: var(--soft-green); }
+.bg-light-gray { background-color: var(--light-gray-bg); }
+
+.top-notification-bar {
+    background-color: #FF8C00; /* Naranja fuerte */
+    color: #ffffff;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero-title-card {
+    border-radius: 20px 20px 50px 50px;
+    padding: 30px 20px;
+}
+.hero-main-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+    .hero-main-title {
+        font-size: 3.5rem;
+    }
+}
+.hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+.hero-promo-card {
+    border-radius: 50px 50px 20px 20px;
+    padding: 25px 20px;
+}
+
+/* (Reemplaza .trust-badge-hero) 
+    Estilos para los textos de garantía del hero
+*/
+.hero-trust-badges {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;      /* Siempre en fila */
+    justify-content: center;  /* Siempre centrados */
+    flex-wrap: wrap;          /* Se ajustan en pantallas pequeñas */
+    gap: 15px;
+    font-weight: 700;
+    color: #555;
+}
+
+.hero-trust-badges span {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: var(--soft-green);
+    border-radius: 10px;
+}
+
+.hero-trust-badges span i {
+    color: var(--green-check);
+    margin-right: 8px;
+}
+
+@media (min-width: 992px) {
+    /* En desktop los ponemos en línea */
+    .hero-trust-badges {
+        flex-direction: row;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    .hero-trust-badges span {
+        background-color: transparent; /* Quitamos el fondo */
+        padding: 0;
+    }
+}
+
+/* --- Listas con Iconos (Problemas y Beneficios) --- */
+.icon-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.icon-list li {
+    position: relative;
+    font-size: 1.1rem;
+    padding: 15px 20px 15px 60px; /* Espacio para el icono */
+    margin-bottom: 10px;
+    border-radius: 15px;
+    font-weight: 700;
+}
+.icon-list li i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+}
+
+/* Estilo Problemas (Cruz) */
+.problem-list li {
+    background-color: var(--soft-pink);
+    color: #58182d;
+}
+.problem-list li i {
+    color: var(--red-cross);
+}
+
+/* Estilo Beneficios (Check) */
+.benefit-list .custom-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+.benefit-list .custom-card i {
+    font-size: 2rem;
+    color: var(--green-check);
+    margin-right: 15px;
+    margin-top: 5px;
+}
+.benefit-list .custom-card p {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+.book-detail-item {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+}
+
+.book-detail-item .img-fluid {
+    max-height: 350px;
+    margin-bottom: 20px;
+    padding: 0.2em;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+    .book-detail-item .img-fluid {
+        margin-bottom: 0;
+    }
+}
+
+.book-title {
+    font-weight: 800;
+    color: var(--brand-primary);
+    font-size: 1.8rem;
+}
+
+.book-subtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--headline-color);
+    margin-bottom: 20px;
+}
+
+/* --- Sección Oferta --- */
+.offer-card {
+    border: 2px dashed var(--brand-primary);
+}
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+.original-price {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+.final-price {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--brand-primary);
+}
+.urgency-box {
+    border-radius: 15px;
+}
+.trust-badge {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 10px;
+}
+
+/* --- Sección Logística --- */
+.logistics-card {
+    padding: 20px;
+    text-align: center;
+}
+.logistics-card i {
+    font-size: 2.5rem;
+    color: var(--brand-primary);
+    margin-bottom: 15px;
+}
+.logistics-card h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+/* --- Testimonios --- */
+.testimonial-card {
+    border-top: 5px solid var(--brand-secondary);
+    position: relative;
+    padding-top: 60px; /* Espacio para la imagen */
+}
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -40px; /* Saca la imagen */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.testimonial-card .stars {
+    color: #FFC107;
+    margin-bottom: 10px;
+}
+.testimonial-card .name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* --- FAQ (Accordion) --- */
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px !important;
+}
+.accordion-button {
+    border-radius: 10px !important;
+    font-weight: 700;
+    color: var(--headline-color);
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--brand-secondary);
+    color: var(--brand-primary);
+    box-shadow: none;
+}
+.accordion-button:focus {
+    box-shadow: none;
+    border: none;
+}
+
+footer {
+    background-color: var(--headline-color);
+    color: #aaa;
+    padding: 30px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.hero-section {
+    background-color: var(--brand-background);
+}
+
+.hero-banner-image {
+    margin-bottom: 20px;
+}
+
+.benefit-check-list-section {
+    background-color: var(--brand-background);
+}
+
+.benefit-check-list-section .display-6 {
+    font-weight: 800;
+    color: var(--headline-color);
+}
+
+.benefit-check-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px 25px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+}
+
+.benefit-check-icon {
+    font-size: 1.8rem;
+    color: var(--green-check);
+    margin-right: 20px;
+}
+
+.benefit-check-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.benefit-check-text strong {
+    color: var(--brand-primary);
+    font-weight: 800;
+}
+
+.benefit-check-deco {
+    font-size: 1.6rem;
+    color: var(--brand-primary);
+    opacity: 0.4;
+    margin-left: 20px;
+}
+
+.focus-copy-card {
+    padding: 30px 35px;
+}
+.focus-copy-card p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+.focus-copy-card .lead {
+    font-weight: 700;
+    color: var(--headline-color);
+}
+
+.focus-copy-card .h3 {
+    font-size: 1.9rem;
+    font-weight: 900;
+    line-height: 1.4;
+    color: var(--headline-color);
+    display: inline;
+    position: relative;
+    z-index: 1;
+}
+
+.fancy-title-wrapper {
+    margin-bottom: 45px;
+}
+
+.fancy-title-wrapper h2,
+.fancy-title-wrapper h3 {
+    position: relative;
+    display: inline-block;
+    font-weight: 900;
+    line-height: 1.4;
+}
+
+.fancy-title-wrapper h2::after,
+.fancy-title-wrapper h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 5%;
+    width: 90%;
+    height: 12px;
+    background-color: var(--brand-secondary);
+    z-index: -1;
+    transform: skew(-5deg);
+}
+
+.fancy-title-wrapper h2::after {
+    bottom: 0px;
+    height: 15px;
+}
+
+.focus-copy-card .btn-cta {
+    margin-top: 25px;
+}
+
+.focus-copy-card .btn-cta {
+    margin-top: 25px;
+}
+
+/* --- Estilos para el precio con descuento en el Hero --- */
+.hero-price-display {
+    margin: 25px 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.hero-badge {
+    background-color: #FFF3E0; /* Fondo crema suave */
+    border: 2px solid var(--brand-primary);
+    color: var(--brand-primary);
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.price-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.price-original {
+    text-decoration: line-through;
+    color: #9E9E9E; /* Gris para el precio viejo */
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.price-final {
+    font-size: 3.5rem; /* Tamaño grande para el precio final */
+    font-weight: 900;
+    color: var(--brand-primary); /* Naranja de tu marca */
+    line-height: 1;
+}
+
+.discount-alert {
+    color: var(--red-cross); /* Rojo para la urgencia */
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+/* Ajustes para layout de 2 columnas en Desktop */
+@media (min-width: 992px) {
+    
+    /* 1. Imagen: Asegurar que la imagen ocupe su columna sin márgenes extraños */
+    .hero-banner-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 2. Precio y Descuento: Alinear a la izquierda */
+    .hero-price-display {
+        align-items: flex-start; /* Alinea los elementos internos a la izquierda */
+    }
+
+    /* Aplica la alineación a la izquierda SÓLO al botón dentro del Hero */
+    .hero-section .btn-cta {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    /* 4. Barras de Confianza: Alinear a la izquierda */
+    .hero-trust-badges {
+        justify-content: flex-start;
+    }
+}
+
+/* --- Estilo para la lista dentro de las tarjetas de dolor (pain points) --- */
+.list-pain-points {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.list-pain-points li {
+    padding: 8px 0; /* Espaciado entre elementos de la lista */
+    border-bottom: 1px dashed var(--light-gray-bg); /* Línea de separación suave */
+    font-size: 0.95rem; 
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.list-pain-points li:last-child {
+    border-bottom: none; /* Quitar la línea en el último elemento */
+}
+
+/* Ajuste para asegurar que el icono principal de la tarjeta esté centrado */
+.custom-card .fa-3x {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+/* --- Estilo para la nueva barra de urgencia (urgency-ribbon) --- */
+.urgency-ribbon {
+    /* Usamos el color secundario de la marca para un fondo suave */
+    background-color: var(--brand-secondary); 
+    /* Borde que usa el color de alerta para llamar la atención */
+    border: 3px solid var(--brand-primary); 
+    border-radius: 10px;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(245, 124, 0, 0.2);
+}
+
+.urgency-ribbon h4 {
+    /* El texto de alerta principal en color de peligro */
+    color: var(--red-cross); 
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.urgency-ribbon p {
+    color: #888;
+    font-weight: 600;
+    font-size: 0.9rem; /* Pequeño para que el foco sea el título */
+}
+
+.urgency-ribbon i {
+    color: var(--red-cross);
+    font-size: 1.2em;
+}
+
+.custom-card {
+    transition: all 0.3s ease; /* Transición suave para el efecto */
+}
+
+.custom-card:hover {
+    transform: translateY(-5px); /* Se levanta 5px */
+    box-shadow: 0 12px 30px rgba(245, 124, 0, 0.2); /* Sombra más pronunciada usando el color de la marca */
+}
+
+.custom-card img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--brand-secondary);
+}
+
+.book-detail-item {
+    transition: all 0.3s ease; 
+}
+
+.book-detail-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(245, 124, 0, 0.25); /* Sombra marcada */
+    cursor: pointer;
+}
+
+.benefit-check-item {
+    transition: all 0.3s ease; 
+}
+
+.benefit-check-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(245, 124, 0, 0.2);
+}
+
+.problem-list li {
+    background-color: #ffffff; 
+    color: var(--text-color); 
+    padding: 20px 25px 20px 60px; /* Asegura el espacio para el ícono */
+    margin-bottom: 15px;
+    border-radius: 15px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease; /* Transición para el hover */
+}
+
+.problem-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(245, 124, 0, 0.2);
+}
+
+/* --- ADAPTACIÓN RESPONSIVE (MÓVIL) --- */
+@media (max-width: 767px) {
+    
+    /* 1. Titulares y texto para hacerlos más pequeños */
+    body {
+        font-size: 0.95rem; /* Reduce el tamaño de fuente base */
+    }
+
+    /* Reducción general de títulos */
+    h1, .display-6 {
+        font-size: 1.8rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* 2. Sección HERO */
+    
+    /* Alinear texto al centro y reducir tamaño del título principal */
+    .hero-section .text-lg-start {
+        text-align: center !important; 
+    }
+
+    .hero-main-title {
+        font-size: 2rem !important; 
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem !important;
+    }
+
+    /* Ajuste de precios en el Hero */
+    .price-original {
+        font-size: 1.2rem;
+    }
+    .price-final {
+        font-size: 2.5rem; /* Reducir el tamaño del precio de $5 */
+    }
+    
+    /* El botón CTA debe tener un ancho máximo para no ser demasiado grande */
+    .btn-cta {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+        max-width: 300px; /* Ancho máximo en móvil */
+    }
+
+    /* Ajuste de los badges de confianza */
+    .hero-trust-badges {
+        /* Fuerza la alineación al centro en móvil si se ha alineado a la izquierda en desktop */
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    
+    /* 3. Ajuste de tarjetas y secciones */
+    
+    /* Padding para las secciones */
+    .container-section {
+        padding: 30px 10px; 
+    }
+
+    /* Padding de las tarjetas de dolor/beneficio */
+    .custom-card {
+        padding: 20px 15px; 
+        margin-bottom: 20px;
+    }
+    
+    /* Ajuste de la lista de problemas/beneficios */
+    .icon-list li {
+        font-size: 1rem;
+        padding: 15px 15px 15px 50px; /* Reducir padding horizontal */
+    }
+    .icon-list li i {
+        left: 15px; /* Ajustar posición del icono */
+    }
+
+    /* Ajuste de las tarjetas de beneficios con icono */
+    .benefit-check-item {
+        padding: 15px 20px;
+    }
+    .benefit-check-icon {
+        font-size: 1.5rem;
+        margin-right: 15px;
+    }
+    .benefit-check-text {
+        font-size: 1rem;
+    }
+    .benefit-check-deco {
+        font-size: 1.2rem;
+    }
+
+    /* 4. Sección de detalles del libro */
+    .book-detail-item {
+        padding: 20px;
+        text-align: center; /* Centrar elementos dentro de cada libro en móvil */
+    }
+    .book-detail-item .img-fluid {
+        width: 80%; /* Hacer la imagen del libro más pequeña */
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .book-title {
+        font-size: 1.5rem;
+    }
+    .book-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* 5. Sección de la Oferta */
+    .offer-card {
+        padding: 25px 15px;
+    }
+    .original-price {
+        font-size: 1.2rem;
+    }
+    .final-price {
+        font-size: 2.5rem;
+    }
+
+    /* 6. Testimonios */
+    .testimonial-card {
+        padding-top: 50px;
+        margin-top: 50px; /* Espacio para que la imagen sobresalga de la tarjeta anterior */
+    }
+    .testimonial-card img {
+        width: 70px;
+        height: 70px;
+        top: -35px;
+    }
+    .testimonial-card p {
+        font-size: 0.95rem;
+    }
+
+    /* 7. Footer */
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    /* Ajuste de Testimonios para que la foto no sobresalga */
+    .testimonial-card {
+        /* Quitamos el espacio superior que se usaba para la imagen */
+        padding-top: 20px; 
+        /* Quitamos el margen superior para pegarla a la tarjeta anterior */
+        margin-top: 0; 
+        /* Forzamos el texto a centrarse en móvil */
+        text-align: center;
+    }
+
+    .testimonial-card img {
+        /* La imagen deja de ser absoluta para entrar en el flujo normal del padding */
+        position: static; 
+        /* Se coloca un margen para centrarla y separarla del texto */
+        margin: 0 auto 10px auto; 
+        /* Reducimos el tamaño de la imagen en móvil */
+        width: 60px;
+        height: 60px;
+        /* La imagen deja de sobresalir y se mantiene dentro de la tarjeta */
+        transform: none; 
+    }
+}
